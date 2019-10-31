@@ -35,3 +35,11 @@ body {
         display: none;
     }
 }
+
+.email-text {
+    width: 18%;
+}
+
+.container.body-content{
+    margin-top: 20px;
+}
