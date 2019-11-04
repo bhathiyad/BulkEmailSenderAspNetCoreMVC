@@ -1,18 +1,28 @@
 ﻿@model BulkEmailViewModel
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Send Bulk Emails";
 }
 
+
 <form asp-controller="BulkEmail" asp-action="AddEmailsToQueue" method="post">
-    <div>
-        <label asp-for="EmailCount"></label>
-        <input asp-for="EmailCount" />
-        <span asp-validation-for="EmailCount"></span>
+    <div class="form-group">
+        <h5>Email Count</h5>
+        <input class="form-control email-text" type="text" name="EmailCount" />
+    </div>
+    <div class="form-group">
+        <input class="btn btn-default" type="submit" name="Submit" id="Submit" value="Queue Emails" />
     </div>
 
-    <div>
+    @*<div class="form-group">
+        <label>Email Count</label>
+        <input type="text" name="EmailCount" id="EmailCount" />
+        <input asp-for="EmailCount" />
+        <span asp-validation-for="EmailCount"></span>
+    </div>*@
+
+    @*<div>
         <input type="submit" value="QueueEmails" />
-    </div>
+    </div>*@
     <span>@TempData["SuccessMsg"]?.ToString()</span>
 </form>
 
